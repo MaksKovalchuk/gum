@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BusinessCard</title>
+    <link rel="shortcut icon" type="image/png" href="{% static  'favicon.ico' %}"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+{% if card_body.loaded == True %}
+    <section>
+        <header>
+            <h1>{{ card_body.topic }}</h1>
+        </header>
+        <div><p class="subtitle">Автор:</p><p class="data">{{ card_body.name }} {{ card_body.surname }}</p></div><hr>
+        <div><p class="subtitle">Номер телфона:</p><p class="data">{{ card_body.phone_number }}</p></div><hr>
+        <div><p class="subtitle">Текст визитки:</p><p class="data">{{ card_body.text }}</p></div>
+        <form action="/delete" method="get">
+            <button type="submit">Удалить визитку</button>
+        </form>
+    </section>
+{% else %}
+    <header>
+        <h1>Создай визитку своими руками!</h1>
+    </header>
+    <section>
+    <form action="/card/" method="post">
+        <label><p class="subtitle">Введите имя</p>
+            <input name="name" type="text">
+        </label>
+        <label><p class="subtitle">Введите фамилию</p>
+            <input name="surname" type="text">
+        </label>
+        <label><p class="subtitle">Введите номер телефона</p>
+            <input name="phone_number" type="text">
+        </label>
+        <label><p class="subtitle">Введите заголовок</p>
+            <input name="topic" type="text">
+        </label>
+        <label><p class="subtitle">Введите текст визитки</p>
+            <input name="text" type="text">
+        </label>
+        <br>
+        <button type="submit">Отправить</button>
+    </form>
+    </section>
+{% endif %}
+</body>
+</html>

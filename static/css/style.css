@@ -1,0 +1,54 @@
+body {
+    background-image: url(../imgs/bk_img.jpg);
+}
+
+header {
+    padding: 30px 0;
+}
+
+h1 {
+    font-size: 28px;
+    text-align: center;
+    color: white;
+}
+
+section {
+    text-align: center;
+    padding: 30px;
+}
+
+.subtitle {
+    display: block;
+    color: white;
+    font-size: 28px;
+}
+
+input {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #136182;
+    border: 1px solid #cccccc;
+}
+
+button {
+    margin: 30px 0;
+    background-color: #70737a;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.data {
+    color: #cccccc;
+    font-size: 28px;
+}
+
+hr {
+    width: 500px;
+}
